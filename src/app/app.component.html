@@ -1,0 +1,57 @@
+<main>
+  <form class="form">
+      <br />
+      <table>
+          <tr>
+              <td colspan="3" class="title">Customers</td>
+          </tr>
+          <tr>
+              <td class="label">Customer Id:</td>
+              <td><input type="text" [(ngModel)]="customer.customerId" name="Id" oninput="this.value = this.value.replace(/\D+/g, '')" /></td>
+              <td> <button class="button" (click)="httpGetCustomer()">Get Customer</button></td>
+          </tr>
+          <tr>
+              <td class="label">Customer Name:</td>
+              <td><input type="text" [(ngModel)]="customer.customerName" name="Name" value=""></td>
+              <td><button class="button" (click)="httpUpdate()">Update Customer</button></td>
+          </tr>
+          <tr>
+              <td class="label">Created Date:</td>
+              <td><input style="width: 98%" type="date" [(ngModel)]="customer.createdDate" name="Date" value=""></td>
+              <td><button class="button" (click)="httpPost()">Add Customer</button></td>
+          </tr>
+          <tr>
+              <td class="label">Customer TypeID:</td>
+              <td>
+                  <select style="width: 100%" id="customerType" #customerType (change)="onCustomerTypeSelected(customerType.value)">
+                      <option default>Pick Customer Type</option>
+                      <option *ngFor="let customerType of customerTypes">{{customerType}}</option>
+                  </select>
+              </td>
+              <td><button class="button" (click)="httpDelete()">Delete Customer</button></td>
+          </tr>
+          <tr>
+              <td class="label">State:</td>
+              <td>
+                  <select style="width: 100%" id="state" #state (change)="onStateSelected(state.value)">
+                      <option default>Pick State Name</option>
+                      <option *ngFor="let state of stateNames">{{state}}</option>
+                  </select>
+              </td>
+              <td><button class="button" (click)="cleanup()">Empty form</button></td>
+          </tr>
+          <tr>
+              <td></td>
+              <td>
+              </td>
+              <td> <button class="button" (click)="httpGetCustomerList()">Get Customer List</button></td>
+          </tr>
+      </table>
+      <br />
+      <label class="status" htmlFor="title">
+          Query Status:
+          <textarea class="area" id="txtArea" readonly></textarea>
+      </label>
+  </form>
+  <div id="ctab"></div>
+</main>

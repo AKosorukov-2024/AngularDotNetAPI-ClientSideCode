@@ -1,0 +1,39 @@
+.form {
+    margin-top: 20px;
+    width: 470px;
+    height: 360px;
+    background-color: darkgray;
+  }
+  .title {
+    text-align: center;
+    font-weight: bold;
+    color:white;
+    font-size:30px;
+  }
+  .label {
+    text-align: right;
+    font-weight: bold;
+    color: white;
+  }
+  .status {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+  }
+  .data {
+    position: absolute;
+    margin-top: 20px;
+  }
+  .area {
+    margin-left: 20px;
+    width: 408px;
+    height: 100px;
+  }
+  .button {
+    text-align: center;
+    width: 125px;
+    height: 20px;
+  }
+  
