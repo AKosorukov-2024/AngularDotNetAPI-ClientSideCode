@@ -38,8 +38,6 @@ export class AppComponent {
       .append('Content-Type', 'application/json')
 
     let params = new HttpParams();
-
-    // Begin assigning parameters
     this.http.get(this.baseUrl + '/CustomerList', 
       { headers: headers, params: params }).subscribe(data => {
       const response = JSON.parse(data.toString());
